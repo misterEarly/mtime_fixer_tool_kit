@@ -1,5 +1,7 @@
 # mtime correction tool kit
 
+On main are changes which have been made so it works on my server. The individual changes are in individual branches, and PR's to the original are opened on the ones I think make sense.
+
 ## Limitations
 
 - Only checks for files with mtime === -3600
