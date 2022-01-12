@@ -27,7 +27,7 @@ fi
 function correct_mtime() {
 	filepath="$1"
 	relative_filepath="${filepath/#$data_dir\//}"
-	mtime_on_fs="$(stat -c '%Y' "$filepath")"
+	mtime_on_fs="$(stat -s "$filepath" | tr ' ' '\n' | grep st_mtime | sed 's/\(st_mtime=\)//g')"
 	data_dir_with_trailing_slash="$data_dir/"
 
 	username=$relative_filepath
